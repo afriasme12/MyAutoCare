@@ -1,2 +1,9 @@
-I could use a subscription tracker repository to help me out with this project because when I ran it in vscode, I realized that some of the format aligns with my idea. It gives you a list of actions you can carry out, you choose one, and then it displays all the information on that subscription. I would do something similar with auto maitenance. Link = (ksu-is/Subscription-Tracker: A software which allows user to access all their subscription in one location, while reminding them of upcoming payments. (github.com))
-I could also use the DB Python teaching code from class because it uses a database from SQL Lite. It gives me an idea of how to go about this project because I also want to use SQL in this project. Link = (pythonteachingcode/4 DB in Python at master · dominict/pythonteachingcode (github.com))
+Sprint 1
+- [x] Project topic approved
+- [x] Join ksu-is Github
+- [x] Create Repository
+- [x] Create ReadMe File
+- [x] Create ProjectRoadMap File
+- [x] Get Related Code and why related
+
+Sprint 2
