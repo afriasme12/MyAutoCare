@@ -7,3 +7,4 @@ Sprint 1
 - [x] Get Related Code and why related
 
 Sprint 2
+- [x] Start Coding and Setting Up Program
