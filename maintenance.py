@@ -15,8 +15,8 @@ for x in results_list:
     else:
         c.execute("""CREATE TABLE maintenance (
                 vehicle text,
-                service_type text,
-                service_date text
+                service text,
+                service text
                 )""")
 
 conn.commit()
