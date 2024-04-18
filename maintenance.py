@@ -1,5 +1,5 @@
-from aifc import Error
 import sqlite3
+from sqlite3 import Error
 
 conn = sqlite3.connect('automtc.ed')
 
@@ -9,14 +9,12 @@ sql_query = """SELECT name FROM sqlite_master WHERE type='table';"""
 c.execute(sql_query)
 results = c.fetchall()
 results_list = [item[0] for item in results]
-for x in results_list:
-    if 'maintenance' in results_list:
-        pass
-    else:
-        c.execute("""CREATE TABLE maintenance (
+if 'maintenance' not in results_list:
+    c.execute("""CREATE TABLE maintenance (
                 vehicle text,
                 service text,
-                service text
+                date text,
+                mileage text
                 )""")
 
 conn.commit()
