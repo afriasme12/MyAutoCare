@@ -35,12 +35,12 @@ def insert_data():
         pass
 def view_data():
     try:
-        cursor = conn.execute ("SELECT id,vehicle,service,date,mileage FROM maintenance")
+        cursor = conn.execute ("SELECT vehicle,service,date,mileage FROM maintenance")
         alldata = []
-        alldata.append(["ID","vehicle","service","date","mileage"])
+        alldata.append(["vehicle","service","date","mileage"])
         for row in cursor:
             thisrow=[]
-            for x in range(8):
+            for x in range(4):
                 thisrow.append(row[x])
             alldata.append(thisrow)
         return alldata
@@ -69,9 +69,9 @@ def update_data():
        sql = "UPDATE maintenance set mileage  = ? where id =  ?"
 
 def delete_data():
-    id_  =  input("Enter the ID for the data record to delete:")
+    id_  =  input("Enter the vehicle you want to delete:")
     cursor = conn.cursor()
-    cursor.execute("select vehicle from maintenance where ID = "+id_)
+    cursor.execute("select vehicle from maintenance where vehicle = "+id_)
     delete_item = cursor.fetchall()
     confirm = input("Are you sure you want to delete " + id_ + " " + str(delete_item[0]) + "? (Enter 'y' to confirm.)")
     if confirm.lower() == "y":
