@@ -55,28 +55,28 @@ def update_data():
                 thisrow += str(item) + "  "
             print (thisrow)
     print('''1 = edit vehicle\n 2 = edit service\n 3 = edit date\n 4 = edit mileage''')
-    update_ID = input("Enter the ID of the data record to edit: ")
-    feature = input("Enter which feature of the data do you want to edit: ")
+    update_ID = input("Enter the vehicle you want to update: ")
+    feature = input("Enter which feature of the data you want to edit: ")
     update_value = input ("Editing "+feature+ ": enter the new data: ")
 
     if(feature == "1"):
-        sql = "UPDATE maintenance set vehicle = ? where id =  ?"
+        sql = "UPDATE maintenance set vehicle = ? where vehicle =  ?"
     elif (feature == "2"):
-       sql = "UPDATE maintenance set service = ? where id =  ?" 
+       sql = "UPDATE maintenance set service = ? where vehicle =  ?" 
     elif (feature == "3"):
-       sql = "UPDATE maintenance set date  = ? where id =  ?"
+       sql = "UPDATE maintenance set date  = ? where vehicle =  ?"
     elif (feature == "4"):
-       sql = "UPDATE maintenance set mileage  = ? where id =  ?"
+       sql = "UPDATE maintenance set mileage  = ? where vehicle =  ?"
 
 def delete_data():
     id_  =  input("Enter the vehicle you want to delete:")
     cursor = conn.cursor()
-    cursor.execute("select vehicle from maintenance where vehicle = "+id_)
+    cursor.execute("select vehicle from maintenance where vehicle = ?",(id_))
     delete_item = cursor.fetchall()
     confirm = input("Are you sure you want to delete " + id_ + " " + str(delete_item[0]) + "? (Enter 'y' to confirm.)")
     if confirm.lower() == "y":
         try:
-            delete_sql = "DELETE FROM maintenance WHERE id = ?"
+            delete_sql = "DELETE FROM maintenance WHERE vehicle = ?"
             conn.execute(delete_sql,id_)
             result = conn.commit()
             if result == None:
