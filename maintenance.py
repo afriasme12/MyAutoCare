@@ -100,8 +100,23 @@ def delete_data():
     else:
         print("Deletion aborted.")
 
+def tip_data():
+    service_perf = input("What service was/will be performed?\n 1 = Oil Change\n 2 = Tire Replacement\n 3 = Air Filter Replacement\n 4 = Brake Replacement\n 5 = Coolant Change\n 6 = Other")
+    amount_miles = input("How many miles are/were on the car before?")
+    if service_perf == '1':
+        print("Your next oil change should be at", int(amount_miles) + 3000)
+        print("We recommend oil changes every 3000-5000 miles but always make sure to check your owner's manual!")
+    if service_perf == '2':
+        print("Your next tire change should be at", int(amount_miles) + 3000)
+    if service_perf == '3':
+    if service_perf == '4':
+    if service_perf == '5':
+    if service_perf == '6':
+        print("We recommend to check up on all your services at least every 5000 miles but always make sure to check your owner's manual!")
+    
+
 while True:
-    print("Welcome to MyAutoCare! How may we assist you today?\n 1 = View Vehicle Information\n 2 = Insert new Vehicle Information\n 3 = Update Vehicle Information\n 4 = Delete Vehicle Information\n 5 = Exit")
+    print("Welcome to MyAutoCare! How may we assist you today?\n 1 = View Vehicle Information\n 2 = Insert new Vehicle Information\n 3 = Update Vehicle Information\n 4 = Delete Vehicle Information\n 5 = Helpful Tips\n 6 = Exit")
     name = input ("Choose an operation to perform: ")
     if (name =="1"):
         for row in view_data():
@@ -116,5 +131,7 @@ while True:
     elif(name == "4"):
         delete_data()
     elif(name == "5"):
+        tip_data()
+    elif(name == "6"):
         conn.close()
         break
