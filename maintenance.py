@@ -100,19 +100,36 @@ def delete_data():
     else:
         print("Deletion aborted.")
 
+def amount_miles():
+  amount_miles = input("How many miles are/were on the car before?")
+def owners_man():
+    print("but always make sure to check your vehicle's owner's manual!")
+
+
 def tip_data():
-    service_perf = input("What service was/will be performed?\n 1 = Oil Change\n 2 = Tire Replacement\n 3 = Air Filter Replacement\n 4 = Brake Replacement\n 5 = Coolant Change\n 6 = Other")
-    amount_miles = input("How many miles are/were on the car before?")
+    service_perf = input("What service was/will be performed?\n 1 = Oil Change\n 2 = Tire Replacement\n 3 = Air Filter Replacement\n 4 = Brake Pad Replacements\n 5 = Coolant Change\n 6 = Other\n")
     if service_perf == '1':
-        print("Your next oil change should be at", int(amount_miles) + 3000)
-        print("We recommend oil changes every 3000-5000 miles but always make sure to check your owner's manual!")
+        amount_miles()
+        print("Your next oil change should be at", int(amount_miles) + 3000, "!")
+        print("We recommend oil changes every 3,000-5,000 miles", owners_man())
     if service_perf == '2':
-        print("Your next tire change should be at", int(amount_miles) + 3000)
+        amount_miles()
+        print("Your next tire replacement should be at", int(amount_miles) + 50000, "!")
+        print("We recommend tire replacements every 60,000-75,000 miles", owners_man())
     if service_perf == '3':
+        amount_miles()
+        print("Your next air filter replacement should be at", int(amount_miles) + 50000, "!")
+        print("We recommend air filter replacements every 15,000-30,000 miles", owners_man())
     if service_perf == '4':
+        amount_miles()
+        print("Your next brake pad replacements should be at", int(amount_miles) + 25000, "!")
+        print("We recommend brake pad replacements every 25,000-50,000 miles", owners_man())
     if service_perf == '5':
+        amount_miles()
+        print("Your next coolant change should be at", int(amount_miles) + 30000, "!")
+        print("We recommend coolant changes every 30,000-45,000 miles", owners_man())
     if service_perf == '6':
-        print("We recommend to check up on all your services at least every 5000 miles but always make sure to check your owner's manual!")
+        print("We recommend to check up on all your services at least every 5,000 miles", owners_man())
     
 
 while True:
